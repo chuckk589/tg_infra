@@ -3,6 +3,7 @@ services:
     image: redis:latest
     restart: always
     command: ["redis-server", "--bind", "redis", "--port", "6379", "--requirepass", "${REDIS_PASSWORD}"]
+    env_file: ../.env
     environment:
       - REDIS_PASSWORD
     ports:
