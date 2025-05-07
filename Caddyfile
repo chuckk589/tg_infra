@@ -1,7 +1,7 @@
 neskafe.24tgpromo.ru {
-  reverse_proxy app1:80
+  reverse_proxy neskafe-app:80
 }
 
 kinder.24tgpromo.ru {
-  reverse_proxy app2:80
+  reverse_proxy kinder-app:80
 }
