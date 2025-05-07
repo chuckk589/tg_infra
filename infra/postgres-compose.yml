@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  postgresdb:
+    image: postgres:15
+    restart: unless-stopped
+    env_file: ./infra/.env
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - shared_net
+
+volumes:
+  pgdata:
+
+networks:
+  shared_net:
+    name: shared_net
+    driver: bridge
