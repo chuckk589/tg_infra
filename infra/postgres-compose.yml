@@ -1,6 +1,6 @@
 services:
   postgresdb:
-    image: postgres:15
+    image: ankane/pgvector
     restart: unless-stopped
     env_file: ../.env
     environment:
